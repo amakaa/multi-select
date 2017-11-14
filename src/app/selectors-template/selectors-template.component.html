@@ -1,0 +1,7 @@
+<div class="items-list">
+	<div *ngFor="let item of storedData.itemsList; let in = index">
+	
+		<div class="form-item"><input id="checkbox-{{in}}" class="form-control checkbox" type="checkbox" [value]="item" [checked]="item.isChecked" (change)="$event.target.checked ? onSelect($event, true, in) : onSelect($event, false, in)">{{item}}</div>
+	</div>
+</div>
+<button class="retrieve-button" type="submit">{{storedData.buttonTitle}}</button>

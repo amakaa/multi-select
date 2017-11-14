@@ -1,18 +1,29 @@
+import { NgModule, Component }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgForm, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-
-import { AppComponent } from './app.component';
-
+import { AppComponent }  from './app.component';
+import { ServiceCall } from './service-call/service-call.service';
+import { SelectorsTemplateComponent } from './selectors-template/selectors-template.component';
+import { SearchTemplateComponent } from './search-template/search-template.component';
+import { MainTemplateComponent } from './main-template/main-template.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  imports: [ 
+  	BrowserModule,
+    FormsModule,
+    HttpModule,
+    ReactiveFormsModule 
   ],
-  imports: [
-    BrowserModule
+  declarations: [ 
+  	AppComponent,
+    MainTemplateComponent,
+    SelectorsTemplateComponent,
+    SearchTemplateComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
+  providers: [ ServiceCall ]
 })
+
 export class AppModule { }

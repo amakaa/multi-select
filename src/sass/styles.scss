@@ -1,0 +1,98 @@
+@import '~sass/variables';
+@import '~sass/fonts';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+body {
+    font-family: $main-font;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    color: $color-A4;
+
+    .form-body {
+    	border: 1px solid $color-A0;
+        border-radius: 5px;
+    	box-sizing: border-box;
+    	display: block;
+    	margin: 50px auto;
+    	width: 30%;
+    	padding: 30px 25px;
+        background: $color-A2;
+
+        .header,
+        .form-item,
+        .items-list {
+            text-align: left;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .form-item {
+            .checkbox:focus{
+                outline:0;
+            }
+
+            .checkbox {
+                appearance: none;
+                border: 1px solid #d3d3d3;
+                cursor: pointer;
+                height: 20px;
+                position: relative;
+                width: 20px;
+                vertical-align: middle;
+                -webkit-appearance: none;
+                margin-right: 10px;
+            }
+            .checkbox:checked {
+                border: 1px solid #d3d3d3;
+                background-color: $color-A1;
+                -moz-box-shadow: inset 0px 0px 0px 2px $color-A3;
+                -webkit-box-shadow: inset 0px 0px 0px 2px  $color-A3;
+                box-shadow: inset 0px 0px 0px 2px $color-A3;
+            }
+        }
+
+        #search {
+            border-radius: 5px;
+            border: 1px solid $color-A0;
+            background: url("/assets/search.svg") $color-A3 95% no-repeat;
+            width: 95%;
+            padding: 1em 0.5em;
+            font-size: 14px;
+        }
+        
+        .items-list {
+            height: 300px; 
+            overflow: scroll;
+        }
+    }
+
+    .retrieve-button {
+    	background: $color-A1;
+    	color: $color-A3;
+    	border: none;
+    	padding: 15px;
+    	width: 100%;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    @media only screen and (min-width : 320px) and (max-width: 568px) {
+		.form-body {
+			width: 100%;
+			border: none;
+		}
+	}
+
+	@media only screen and (min-width: 569px)  and (max-width: 768px) {
+		.form-body {
+			width: 60%;
+		}
+	}
+
+	@media only screen and (min-width: 769px)  and (max-width: 1024px) {
+		.form-body {
+			width: 50%;
+		}
+	}
+}
