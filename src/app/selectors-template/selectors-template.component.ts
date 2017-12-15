@@ -14,7 +14,7 @@ import { NgForm, FormControl, FormGroup, ReactiveFormsModule, FormsModule } from
 })
 
 export class SelectorsTemplateComponent implements OnChanges {
-  @Input() incomingData: any;
+  @Input() incomingSearchData: Array;
 
   storedData = { buttonTitle: 'Toepassen', itemsList: [], excludedItems: [] };
 
@@ -34,8 +34,8 @@ export class SelectorsTemplateComponent implements OnChanges {
     const excludedItems = this.storedData.excludedItems;
 
     if (excludedItems.length) {}
-    this.storedData.itemsList = excludedItems.length ? excludedItems.concat(this.incomingData.filter(item => {
+    this.storedData.itemsList = excludedItems.length ? excludedItems.concat(this.incomingSearchData.filter(item => {
       return excludedItems.indexOf(item) === -1;
-    })) : this.incomingData;
+    })) : this.incomingSearchData;
 	}
 }
