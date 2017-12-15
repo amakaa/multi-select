@@ -14,8 +14,8 @@ import { NgForm, FormControl, FormGroup, ReactiveFormsModule, FormsModule } from
 })
 
 export class SearchTemplateComponent implements OnChanges {
-  @Output('myData') outgoingData = [];
-  @Input() incomingData: any;
+  @Output('myData') outgoingSearchInputData = [];
+  @Input() incomingData: Array;
 
   ngOnChanges() {
     this.outgoingData = this.incomingData;
