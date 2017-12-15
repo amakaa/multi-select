@@ -18,7 +18,7 @@ export class SearchTemplateComponent implements OnChanges {
   @Input() incomingData: Array;
 
   ngOnChanges() {
-    this.outgoingData = this.incomingData;
+    this.outgoingSearchInputData = this.incomingData;
   }
 
 	onChange(value) {
@@ -27,6 +27,6 @@ export class SearchTemplateComponent implements OnChanges {
         return d.toLowerCase().search(
         value.toLowerCase()) !== -1;
       });
-      this.outgoingData = newDataArray;
+      this.outgoingSearchInputData = newDataArray;
 	}
 }
